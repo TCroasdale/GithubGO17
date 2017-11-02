@@ -19,15 +19,32 @@ public class PlayerControl : MonoBehaviour {
 		float in_h = Input.GetAxis("Horizontal");
 		float in_v = Input.GetAxis("Vertical");
 
-		Quaternion prevRot = transform.rotation;
 		Vector3 dir = new Vector3(in_h, 0, in_v);
+
+		Quaternion prevRot = transform.rotation;
 		Quaternion targRot ;
-		if(dir != Vector3.zero){
-			targRot = Quaternion.LookRotation(dir, Vector3.up);
+		Vector3 lookDir;
+		if(Input.GetButton("Suck")){
+
+			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+			Plane playerPlane = new Plane(Vector3.up, transform.position);
+			float hit_dist = 0.0f;
+			if(playerPlane.Raycast(ray, out hit_dist)){
+				Vector3 mPos = ray.GetPoint(hit_dist);
+				lookDir = (mPos - transform.position);
+				lookDir.y = 0;	
+			}else{
+				lookDir = dir;
+			}
+		
+		}else{
+			lookDir = dir;
+		}
+		if(lookDir != Vector3.zero){
+			targRot = Quaternion.LookRotation(lookDir.normalized, Vector3.up);
 		}else{
 			targRot = prevRot;
 		}
-
 		transform.rotation = Quaternion.Slerp(prevRot, targRot, rotSpeed * Time.deltaTime);
 
 		if(!c_Control.isGrounded){ dir.y = Physics.gravity.y * Time.deltaTime; }

@@ -8,6 +8,8 @@ extends Spatial
 var moveDir = Vector3(0,0,0)
 var targetDir = Vector3(0,0,0)
 
+var rotSpeed = 4.0
+
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
@@ -28,7 +30,7 @@ func doMove(moveDir, delta):
 
 func doRot(lookDir, delta):
 	var node = get_node("Mesh")
-	var actualDir = targetDir.linear_interpolate(lookDir, delta)
+	var actualDir = targetDir.linear_interpolate(lookDir, delta * rotSpeed)
 	node.look_at(node.get_transform().origin - actualDir, Vector3(0, 1, 0))
 	targetDir = actualDir
 	

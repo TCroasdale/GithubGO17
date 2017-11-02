@@ -110,7 +110,7 @@ _update_shape_index = 0
 [node name="Camera" type="Camera" parent="."]
 
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-transform/local = Transform( -1, 0, -8.74228e-08, -2.97649e-08, 0.940255, 0.340471, 8.21997e-08, 0.340471, -0.940255, 0, 2.75824, -6.18577 )
+transform/local = Transform( -1, 0, -8.74228e-08, -2.97649e-08, 0.940255, 0.340471, 8.21997e-08, 0.340471, -0.940255, 0, 4, -5.50526 )
 projection = 0
 fov = 65.0
 near = 0.1

@@ -9,6 +9,8 @@ public class PlayerControl : MonoBehaviour {
 
 	public CharacterController c_Control;
 
+	public SuckerScript sucker;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -24,6 +26,14 @@ public class PlayerControl : MonoBehaviour {
 		Quaternion prevRot = transform.rotation;
 		Quaternion targRot ;
 		Vector3 lookDir;
+
+		if(Input.GetButtonDown("Suck")){
+			sucker.turnOn();
+		}
+		if(Input.GetButtonUp("Suck")){
+			sucker.turnOff();
+		}
+
 		if(Input.GetButton("Suck")){
 
 			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -48,6 +58,6 @@ public class PlayerControl : MonoBehaviour {
 		transform.rotation = Quaternion.Slerp(prevRot, targRot, rotSpeed * Time.deltaTime);
 
 		if(!c_Control.isGrounded){ dir.y = Physics.gravity.y * Time.deltaTime; }
-		c_Control.Move(new Vector3(dir.x * moveSpeed, dir.y, dir.z * moveSpeed));
+		c_Control.Move(new Vector3(dir.x * moveSpeed * Time.deltaTime, dir.y, dir.z * moveSpeed * Time.deltaTime));
 	}
 }

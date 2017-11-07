@@ -6,14 +6,23 @@ public class SuckerScript : MonoBehaviour {
 
 	public float power = 5;
 
+
 	// Use this for initialization
 	void Start () {
-		
+		turnOff();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
+	}
+
+	public void turnOn(){
+		gameObject.SetActive(true);
+	}
+
+	public void turnOff(){
+		gameObject.SetActive(false);
 	}
 
 	void OnTriggerEnter(Collider other){

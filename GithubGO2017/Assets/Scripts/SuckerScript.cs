@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class SuckerScript : MonoBehaviour {
 
-	public float power = 5;
+	public float suckPower = 5;
+	public float blowPower = 5;
 
+	public bool isSucking = true;
 
 	// Use this for initialization
 	void Start () {
@@ -17,7 +19,8 @@ public class SuckerScript : MonoBehaviour {
 		
 	}
 
-	public void turnOn(){
+	public void turnOn(bool suck){
+		isSucking = suck;
 		gameObject.SetActive(true);
 	}
 
@@ -26,10 +29,13 @@ public class SuckerScript : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other){
-		Debug.Log("Sucking");
-		iSuckable comp =(iSuckable)other.GetComponent(typeof(iSuckable));
+		iSuckable comp = (iSuckable)other.GetComponent(typeof(iSuckable));
 		if(comp != null){
-			comp.onSuck(transform.parent.position, power);
+			if(isSucking){
+				comp.onSuck(transform.parent.position, suckPower);
+			}else{
+				comp.onBlow(transform.parent.position, blowPower);
+			}
 		}
 	}
 }

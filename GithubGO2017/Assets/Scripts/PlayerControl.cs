@@ -27,15 +27,21 @@ public class PlayerControl : MonoBehaviour {
 		Quaternion targRot ;
 		Vector3 lookDir;
 
-		if(Input.GetButtonDown("Suck")){
-			sucker.turnOn();
+		bool suckPressed = Input.GetButtonDown("Suck");
+		bool blowPressed = Input.GetButtonDown("Blow");
+		bool suckReleased = Input.GetButtonUp("Suck");
+		bool blowReleased = Input.GetButtonUp("Blow");
+		bool suckDown = Input.GetButton("Suck");
+		bool blowDown = Input.GetButton("Blow");
+
+		if(suckPressed || blowPressed){
+			sucker.turnOn(suckPressed);
 		}
-		if(Input.GetButtonUp("Suck")){
+		if(suckReleased || blowReleased){
 			sucker.turnOff();
 		}
 
-		if(Input.GetButton("Suck")){
-
+		if(suckDown || blowDown){
 			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 			Plane playerPlane = new Plane(Vector3.up, transform.position);
 			float hit_dist = 0.0f;

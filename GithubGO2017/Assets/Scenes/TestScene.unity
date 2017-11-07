@@ -117,7 +117,7 @@ Light:
   serializedVersion: 7
   m_Type: 1
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 0.32
+  m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -422,19 +422,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400028, guid: 83c027896ca7c864393de8a13fcdeb0b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.6413785
+      value: 0.6413786
       objectReference: {fileID: 0}
     - target: {fileID: 400028, guid: 83c027896ca7c864393de8a13fcdeb0b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.64137596
+      value: 0.641376
       objectReference: {fileID: 0}
     - target: {fileID: 400028, guid: 83c027896ca7c864393de8a13fcdeb0b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.297714
+      value: -0.29771402
       objectReference: {fileID: 0}
     - target: {fileID: 400028, guid: 83c027896ca7c864393de8a13fcdeb0b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.2977194
+      value: 0.29771942
       objectReference: {fileID: 0}
     - target: {fileID: 13700000, guid: 83c027896ca7c864393de8a13fcdeb0b, type: 3}
       propertyPath: m_Materials.Array.data[0]

@@ -17,4 +17,8 @@ public class DotScript : MonoBehaviour, iSuckable {
 	public void onSuck(Vector3 suckOrigin, float power){
 		GetComponent<Rigidbody>().AddForce((suckOrigin - transform.position) * power, ForceMode.Force);
 	}
+
+	public void onBlow(Vector3 blowOrigin, float power){
+		GetComponent<Rigidbody>().AddForce((transform.position - blowOrigin) * power, ForceMode.Force);
+	}
 }

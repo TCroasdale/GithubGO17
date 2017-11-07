@@ -11,6 +11,8 @@ public class PlayerControl : MonoBehaviour {
 
 	public SuckerScript sucker;
 
+	public int score = 0;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -18,14 +20,18 @@ public class PlayerControl : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		float in_h = Input.GetAxis("Horizontal");
+		float in_h = Input.GetAxis("Horizontal"); //movement axis
 		float in_v = Input.GetAxis("Vertical");
 
-		Vector3 dir = new Vector3(in_h, 0, in_v);
+		float look_h = Input.GetAxis("Look X"); //look axis for controller
+		float look_v = Input.GetAxis("Look Y");
+
+
+		Vector3 moveDir = new Vector3(in_h, 0, in_v); //raw movement vector
 
 		Quaternion prevRot = transform.rotation;
 		Quaternion targRot ;
-		Vector3 lookDir;
+		Vector3 lookDir = new Vector3(look_h, 0, -look_v); //0 if no controller input
 
 		bool suckPressed = Input.GetButtonDown("Suck");
 		bool blowPressed = Input.GetButtonDown("Blow");
@@ -34,36 +40,52 @@ public class PlayerControl : MonoBehaviour {
 		bool suckDown = Input.GetButton("Suck");
 		bool blowDown = Input.GetButton("Blow");
 
-		if(suckPressed || blowPressed){
+		if(suckPressed || blowPressed){ //if sucking or blowing, turn on sucker
 			sucker.turnOn(suckPressed);
 		}
-		if(suckReleased || blowReleased){
+		if(suckReleased || blowReleased){ //on release stop.
 			sucker.turnOff();
 		}
 
-		if(suckDown || blowDown){
-			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-			Plane playerPlane = new Plane(Vector3.up, transform.position);
-			float hit_dist = 0.0f;
-			if(playerPlane.Raycast(ray, out hit_dist)){
-				Vector3 mPos = ray.GetPoint(hit_dist);
-				lookDir = (mPos - transform.position);
-				lookDir.y = 0;	
-			}else{
-				lookDir = dir;
-			}
-		
+		if(suckDown || blowDown){ //while sucking and blowing.
+			if(lookDir.magnitude == 0){ //If no controller input
+				//Convert mouse direction to in game direction.
+				Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+				Plane playerPlane = new Plane(Vector3.up, transform.position);
+				float hit_dist = 0.0f;
+				if(playerPlane.Raycast(ray, out hit_dist)){
+					Vector3 mPos = ray.GetPoint(hit_dist);
+					lookDir = (mPos - transform.position);
+					lookDir.y = 0;	
+				}else{
+					lookDir = moveDir;
+				} 
+			}	
+			//if controller input don't need to do anything
+			//as lookDir already has the right values.	
 		}else{
-			lookDir = dir;
+			lookDir = moveDir;
 		}
-		if(lookDir != Vector3.zero){
+
+		if(lookDir != Vector3.zero){ //if lookDir isn't 0 set targRot to lookDir 
 			targRot = Quaternion.LookRotation(lookDir.normalized, Vector3.up);
-		}else{
+		}else{ //else dontarget rotation is current rotation.
 			targRot = prevRot;
 		}
+		
+		//slerp the rotation.
 		transform.rotation = Quaternion.Slerp(prevRot, targRot, rotSpeed * Time.deltaTime);
 
-		if(!c_Control.isGrounded){ dir.y = Physics.gravity.y * Time.deltaTime; }
-		c_Control.Move(new Vector3(dir.x * moveSpeed * Time.deltaTime, dir.y, dir.z * moveSpeed * Time.deltaTime));
+		//if in air apply gravity.
+		if(!c_Control.isGrounded){ moveDir.y = Physics.gravity.y * Time.deltaTime; }
+		//move according to moveDir
+		c_Control.Move(new Vector3(moveDir.x * moveSpeed * Time.deltaTime, moveDir.y, moveDir.z * moveSpeed * Time.deltaTime));
+	}
+
+	void OnCollisionEnter(Collision col){
+		if(col.collider.transform.tag == "Dot"){
+			score++;
+			Destroy(col.collider.gameObject);
+		}
 	}
 }

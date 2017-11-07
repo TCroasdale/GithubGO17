@@ -28,7 +28,7 @@ public class SuckerScript : MonoBehaviour {
 		gameObject.SetActive(false);
 	}
 
-	void OnTriggerEnter(Collider other){
+	void OnTriggerStay(Collider other){
 		iSuckable comp = (iSuckable)other.GetComponent(typeof(iSuckable));
 		if(comp != null){
 			if(isSucking){

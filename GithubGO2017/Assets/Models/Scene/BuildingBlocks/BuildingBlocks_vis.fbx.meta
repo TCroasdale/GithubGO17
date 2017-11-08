@@ -1,0 +1,207 @@
+fileFormatVersion: 2
+guid: 69baa51a712bae544974f97d14dd720e
+timeCreated: 1510097371
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: 2Corner
+    100002: 2Corner.1w1s
+    100004: 2Corner.w
+    100006: 3Corner
+    100008: 3Corner.1w2s
+    100010: 3Corner.2w1s
+    100012: 3Corner.3w
+    100014: 4Corner
+    100016: 4Corner.2w2s
+    100018: 4Corner.w
+    100020: //RootNode
+    100022: Corner_Fill
+    100024: Corridor_1
+    100026: Corridor_1.w
+    100028: Corridor_2
+    100030: Corridor_2.w
+    100032: Corridor_3
+    100034: Corridor_3.w
+    100036: Corridor_4
+    100038: Corridor_4.w
+    100040: Door
+    100042: DoorFrame
+    100044: End
+    100046: End.001
+    100048: Floor.4x4
+    100050: Floor.6x6
+    100052: Floor.8x8
+    400000: 2Corner
+    400002: 2Corner.1w1s
+    400004: 2Corner.w
+    400006: 3Corner
+    400008: 3Corner.1w2s
+    400010: 3Corner.2w1s
+    400012: 3Corner.3w
+    400014: 4Corner
+    400016: 4Corner.2w2s
+    400018: 4Corner.w
+    400020: //RootNode
+    400022: Corner_Fill
+    400024: Corridor_1
+    400026: Corridor_1.w
+    400028: Corridor_2
+    400030: Corridor_2.w
+    400032: Corridor_3
+    400034: Corridor_3.w
+    400036: Corridor_4
+    400038: Corridor_4.w
+    400040: Door
+    400042: DoorFrame
+    400044: End
+    400046: End.001
+    400048: Floor.4x4
+    400050: Floor.6x6
+    400052: Floor.8x8
+    2300000: 2Corner
+    2300002: 2Corner.1w1s
+    2300004: 2Corner.w
+    2300006: 3Corner
+    2300008: 3Corner.1w2s
+    2300010: 3Corner.2w1s
+    2300012: 3Corner.3w
+    2300014: 4Corner
+    2300016: 4Corner.2w2s
+    2300018: 4Corner.w
+    2300020: Corner_Fill
+    2300022: Corridor_1
+    2300024: Corridor_1.w
+    2300026: Corridor_2
+    2300028: Corridor_2.w
+    2300030: Corridor_3
+    2300032: Corridor_3.w
+    2300034: Corridor_4
+    2300036: Corridor_4.w
+    2300038: Door
+    2300040: DoorFrame
+    2300042: End
+    2300044: End.001
+    2300046: Floor.4x4
+    2300048: Floor.6x6
+    2300050: Floor.8x8
+    3300000: 2Corner
+    3300002: 2Corner.1w1s
+    3300004: 2Corner.w
+    3300006: 3Corner
+    3300008: 3Corner.1w2s
+    3300010: 3Corner.2w1s
+    3300012: 3Corner.3w
+    3300014: 4Corner
+    3300016: 4Corner.2w2s
+    3300018: 4Corner.w
+    3300020: Corner_Fill
+    3300022: Corridor_1
+    3300024: Corridor_1.w
+    3300026: Corridor_2
+    3300028: Corridor_2.w
+    3300030: Corridor_3
+    3300032: Corridor_3.w
+    3300034: Corridor_4
+    3300036: Corridor_4.w
+    3300038: Door
+    3300040: DoorFrame
+    3300042: End
+    3300044: End.001
+    3300046: Floor.4x4
+    3300048: Floor.6x6
+    3300050: Floor.8x8
+    4300000: Corner_Fill
+    4300002: Floor.8x8
+    4300004: Floor.6x6
+    4300006: Floor.4x4
+    4300008: 2Corner.1w1s
+    4300010: 4Corner.2w2s
+    4300012: 3Corner.1w2s
+    4300014: 3Corner.2w1s
+    4300016: 4Corner.w
+    4300018: 3Corner.3w
+    4300020: 2Corner.w
+    4300022: End.001
+    4300024: Door
+    4300026: DoorFrame
+    4300028: Corridor_1.w
+    4300030: Corridor_2.w
+    4300032: Corridor_3.w
+    4300034: Corridor_4.w
+    4300036: Corridor_4
+    4300038: Corridor_3
+    4300040: Corridor_2
+    4300042: Corridor_1
+    4300044: End
+    4300046: 2Corner
+    4300048: 3Corner
+    4300050: 4Corner
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

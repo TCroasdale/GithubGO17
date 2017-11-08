@@ -9,6 +9,9 @@ public class SuckerScript : MonoBehaviour {
 
 	public bool isSucking = true;
 
+	public GameObject suckParticles;
+	public GameObject blowParticles;
+
 	// Use this for initialization
 	void Start () {
 		turnOff();
@@ -22,10 +25,20 @@ public class SuckerScript : MonoBehaviour {
 	public void turnOn(bool suck){
 		isSucking = suck;
 		gameObject.SetActive(true);
+		if(isSucking){
+			suckParticles.SetActive(true);
+		}else{
+			blowParticles.SetActive(true);
+		}
 	}
 
 	public void turnOff(){
 		gameObject.SetActive(false);
+		if(isSucking){
+			suckParticles.SetActive(false);
+		}else{
+			blowParticles.SetActive(false);
+		}
 	}
 
 	void OnTriggerStay(Collider other){

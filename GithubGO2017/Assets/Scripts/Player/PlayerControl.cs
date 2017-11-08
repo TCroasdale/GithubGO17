@@ -13,6 +13,8 @@ public class PlayerControl : MonoBehaviour {
 
 	public int score = 0;
 
+	public float interactDist = 3.0f;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -20,6 +22,24 @@ public class PlayerControl : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		doMove();
+
+		if(Input.GetButtonDown("Interact")){
+			doInteract();
+		}
+	}
+
+	void doInteract(){
+		RaycastHit hit;
+		if(Physics.Raycast(transform.position, transform.forward, out hit, interactDist)){
+			iInteraction thing = (iInteraction)hit.transform.GetComponent(typeof(iInteraction));
+			if(thing != null){
+				thing.onUse(GetComponent<Player>());
+			}
+		}
+	}
+
+	void doMove(){
 		float in_h = Input.GetAxis("Horizontal"); //movement axis
 		float in_v = Input.GetAxis("Vertical");
 

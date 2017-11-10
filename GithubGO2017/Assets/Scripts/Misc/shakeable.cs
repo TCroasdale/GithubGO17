@@ -12,6 +12,8 @@ public class shakeable : MonoBehaviour, iSuckable {
 
 	Vector3 originalPos;
 	public Transform objToShake;
+	public float powerMod = 0.01f;
+	float power;
 
 	// Update is called once per frame
 	void Update () {
@@ -22,16 +24,24 @@ public class shakeable : MonoBehaviour, iSuckable {
 			}
 
 			//shaking code
-			objToShake.localPosition = Mathf.Sin(Time.time * shakeSpeed) * shakeAmt;
+			Vector3 grandShakeAmount = shakeAmt;
+			if(powerMod != 0){
+				if(grandShakeAmount.x != 0){ grandShakeAmount.x += (power * powerMod); }
+				if(grandShakeAmount.y != 0){ grandShakeAmount.y += (power * powerMod); }
+				if(grandShakeAmount.z != 0){ grandShakeAmount.z += (power * powerMod); }
+			}
+			objToShake.localPosition = Mathf.Sin(Time.time * shakeSpeed) * grandShakeAmount;
 		}
 	}
 
 	public void onSuck(Vector3 o, float p){
 		shake();
+		power = p;
 	}
 
 	public void onBlow(Vector3 o, float p){
 		shake();
+		power = p;
 	}
 
 	void shake(){

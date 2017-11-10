@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Dot
+  - PowerPellet
+  - Ghost
+  - Damager
   layers:
   - Default
   - TransparentFX

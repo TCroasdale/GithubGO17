@@ -11,10 +11,6 @@ public class PlayerControl : MonoBehaviour {
 
 	public SuckerScript sucker;
 
-	public int score = 0;
-
-	public float interactDist = 3.0f;
-
 	// Use this for initialization
 	void Start () {
 		
@@ -24,20 +20,10 @@ public class PlayerControl : MonoBehaviour {
 	void Update () {
 		doMove();
 
-		if(Input.GetButtonDown("Interact")){
-			doInteract();
-		}
+		
 	}
 
-	void doInteract(){
-		RaycastHit hit;
-		if(Physics.Raycast(transform.position, transform.forward, out hit, interactDist)){
-			iInteraction thing = (iInteraction)hit.transform.GetComponent(typeof(iInteraction));
-			if(thing != null){
-				thing.onUse(GetComponent<Player>());
-			}
-		}
-	}
+	
 
 	void doMove(){
 		float in_h = Input.GetAxis("Horizontal"); //movement axis
@@ -48,6 +34,8 @@ public class PlayerControl : MonoBehaviour {
 
 
 		Vector3 moveDir = new Vector3(in_h, 0, in_v); //raw movement vector
+
+		if(moveDir.magnitude > 1){ moveDir /= moveDir.magnitude; }
 
 		Quaternion prevRot = transform.rotation;
 		Quaternion targRot ;
@@ -100,12 +88,5 @@ public class PlayerControl : MonoBehaviour {
 		if(!c_Control.isGrounded){ moveDir.y = Physics.gravity.y * Time.deltaTime; }
 		//move according to moveDir
 		c_Control.Move(new Vector3(moveDir.x * moveSpeed * Time.deltaTime, moveDir.y, moveDir.z * moveSpeed * Time.deltaTime));
-	}
-
-	void OnCollisionEnter(Collision col){
-		if(col.collider.transform.tag == "Dot"){
-			score++;
-			Destroy(col.collider.gameObject);
-		}
 	}
 }

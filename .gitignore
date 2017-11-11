@@ -1,5 +1,6 @@
 *.blend
 *.blend1
+*.xcf
 
 /[Ll]ibrary/
 /[Tt]emp/

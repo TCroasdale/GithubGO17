@@ -54,4 +54,5 @@ public class shakeable : MonoBehaviour, iSuckable {
 		objToShake.localPosition = originalPos;
 		isShaking = false;
 	}
+    public void onFinishedInteraction() {}
 }

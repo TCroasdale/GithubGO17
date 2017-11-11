@@ -40,6 +40,8 @@ public class Breakable : MonoBehaviour, iSuckable {
 		shaker.onSuck(o, p * (Health / maxH));
 	}
 
+    public void onFinishedInteraction(){}
+
 	void damage(float amt){
 		Health -= amt;
 		if(Health <= 0.0f){

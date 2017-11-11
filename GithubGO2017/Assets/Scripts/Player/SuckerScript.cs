@@ -51,4 +51,11 @@ public class SuckerScript : MonoBehaviour {
 			}
 		}
 	}
+
+    void OnTriggerExit(Collider other){
+        iSuckable comp = (iSuckable)other.GetComponent(typeof(iSuckable));
+		if(comp != null){
+			comp.onFinishedInteraction();
+		}
+    }
 }

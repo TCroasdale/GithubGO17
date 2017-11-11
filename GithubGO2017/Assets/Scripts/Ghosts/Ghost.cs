@@ -21,6 +21,7 @@ public class Ghost : MonoBehaviour, iSuckable {
 
     CharacterController c_Control;
     public float moveSpeed;
+    public float rotSpeed = 2.0f;
     bool canMove = true;
 
 
@@ -47,7 +48,7 @@ public class Ghost : MonoBehaviour, iSuckable {
         Vector3 dir = ai.think();
 
         Quaternion lookDir = Quaternion.LookRotation(dir, Vector3.up);
-        transform.rotation = Quaternion.Slerp(transform.rotation, lookDir, Time.deltaTime);
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookDir, Time.deltaTime * rotSpeed);
         dir.y += Physics.gravity.y * Time.deltaTime; 
         if(canMove) c_Control.Move(dir * moveSpeed * Time.deltaTime);
         canMove = true;
@@ -66,6 +67,7 @@ public class Ghost : MonoBehaviour, iSuckable {
         ai.setState(Ai.EnemyState.NORMAL);
         mesh.GetComponent<Renderer>().material = normalMaterial;
         anim.SetBool("scared", false);
+        anim.SetBool("sucked", false);
     }
 
 
@@ -78,12 +80,15 @@ public class Ghost : MonoBehaviour, iSuckable {
 
     public void onSuck(Vector3 o, float p){
         doDamage(3);
+        anim.SetBool("sucked", true);
     }
 
     public void onBlow(Vector3 o, float p){
         doDamage(3);
     }
 
-
+    public void onFinishedInteraction(){
+        anim.SetBool("sucked", false);
+    }
 
 }

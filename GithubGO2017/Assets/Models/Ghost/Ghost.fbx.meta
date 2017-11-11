@@ -33,6 +33,7 @@ ModelImporter:
     7400000: ghost_move
     7400002: ghost_move_scared
     7400004: ghost_hit
+    7400006: ghost_suck
     9500000: //RootNode
     13700000: Blinky
   materials:
@@ -172,6 +173,58 @@ ModelImporter:
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 0
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Body.top
+        weight: 1
+      - path: Armature/Body.top/Body.uppermid
+        weight: 1
+      - path: Armature/Body.top/Body.uppermid/Body.lowermid
+        weight: 1
+      - path: Armature/Body.top/Body.uppermid/Body.lowermid/Body.bottom
+        weight: 1
+      - path: Armature/Body.top/Body.uppermid/Body.lowermid/Body.bottom/Body.bottom_end
+        weight: 1
+      - path: Armature/Body.top/Body.uppermid/Body.lowermid/Hand.L
+        weight: 1
+      - path: Armature/Body.top/Body.uppermid/Body.lowermid/Hand.L/Hand.L_end
+        weight: 1
+      - path: Armature/Body.top/Body.uppermid/Body.lowermid/Hand.R
+        weight: 1
+      - path: Armature/Body.top/Body.uppermid/Body.lowermid/Hand.R/Hand.R_end
+        weight: 1
+      - path: Blinky
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: ghost_suck
+      takeName: Armature|ArmatureAction
+      firstFrame: 96
+      lastFrame: 114
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
       loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0

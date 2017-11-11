@@ -21,4 +21,6 @@ public class DotScript : MonoBehaviour, iSuckable {
 	public void onBlow(Vector3 blowOrigin, float power){
 		GetComponent<Rigidbody>().AddForce((transform.position - blowOrigin) * power, ForceMode.Force);
 	}
+
+    public void onFinishedInteraction(){}
 }

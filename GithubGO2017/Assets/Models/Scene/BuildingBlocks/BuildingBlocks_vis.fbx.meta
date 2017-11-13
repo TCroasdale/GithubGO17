@@ -32,6 +32,23 @@ ModelImporter:
     100048: Floor.4x4
     100050: Floor.6x6
     100052: Floor.8x8
+    100054: 1Corner.s
+    100056: 1Corner.w
+    100058: 2Corner.2w
+    100060: 2Corner.s
+    100062: 3Corner.s
+    100064: BlankWall
+    100066: Corridor.1.s
+    100068: Corridor.1.w
+    100070: Corridor.2.s
+    100072: Corridor.2.w
+    100074: Corridor.3.s
+    100076: Corridor.3.w
+    100078: Corridor.4.s
+    100080: Corridor.4.w
+    100082: floor 1x1
+    100084: Floor 3x3
+    100086: floor 3x3
     400000: 2Corner
     400002: 2Corner.1w1s
     400004: 2Corner.w
@@ -59,6 +76,23 @@ ModelImporter:
     400048: Floor.4x4
     400050: Floor.6x6
     400052: Floor.8x8
+    400054: 1Corner.s
+    400056: 1Corner.w
+    400058: 2Corner.2w
+    400060: 2Corner.s
+    400062: 3Corner.s
+    400064: BlankWall
+    400066: Corridor.1.s
+    400068: Corridor.1.w
+    400070: Corridor.2.s
+    400072: Corridor.2.w
+    400074: Corridor.3.s
+    400076: Corridor.3.w
+    400078: Corridor.4.s
+    400080: Corridor.4.w
+    400082: floor 1x1
+    400084: Floor 3x3
+    400086: floor 3x3
     2300000: 2Corner
     2300002: 2Corner.1w1s
     2300004: 2Corner.w
@@ -85,6 +119,23 @@ ModelImporter:
     2300046: Floor.4x4
     2300048: Floor.6x6
     2300050: Floor.8x8
+    2300052: 1Corner.s
+    2300054: 1Corner.w
+    2300056: 2Corner.2w
+    2300058: 2Corner.s
+    2300060: 3Corner.s
+    2300062: BlankWall
+    2300064: Corridor.1.s
+    2300066: Corridor.1.w
+    2300068: Corridor.2.s
+    2300070: Corridor.2.w
+    2300072: Corridor.3.s
+    2300074: Corridor.3.w
+    2300076: Corridor.4.s
+    2300078: Corridor.4.w
+    2300080: floor 1x1
+    2300082: Floor 3x3
+    2300084: floor 3x3
     3300000: 2Corner
     3300002: 2Corner.1w1s
     3300004: 2Corner.w
@@ -111,6 +162,23 @@ ModelImporter:
     3300046: Floor.4x4
     3300048: Floor.6x6
     3300050: Floor.8x8
+    3300052: 1Corner.s
+    3300054: 1Corner.w
+    3300056: 2Corner.2w
+    3300058: 2Corner.s
+    3300060: 3Corner.s
+    3300062: BlankWall
+    3300064: Corridor.1.s
+    3300066: Corridor.1.w
+    3300068: Corridor.2.s
+    3300070: Corridor.2.w
+    3300072: Corridor.3.s
+    3300074: Corridor.3.w
+    3300076: Corridor.4.s
+    3300078: Corridor.4.w
+    3300080: floor 1x1
+    3300082: Floor 3x3
+    3300084: floor 3x3
     4300000: Corner_Fill
     4300002: Floor.8x8
     4300004: Floor.6x6
@@ -137,6 +205,23 @@ ModelImporter:
     4300046: 2Corner
     4300048: 3Corner
     4300050: 4Corner
+    4300052: 3Corner.s
+    4300054: 2Corner.s
+    4300056: 1Corner.s
+    4300058: Corridor.1.s
+    4300060: Corridor.2.s
+    4300062: Corridor.3.s
+    4300064: Corridor.4.s
+    4300066: Corridor.4.w
+    4300068: Corridor.3.w
+    4300070: Corridor.2.w
+    4300072: Corridor.1.w
+    4300074: 1Corner.w
+    4300076: 2Corner.2w
+    4300078: floor 1x1
+    4300080: floor 3x3
+    4300082: Floor 3x3
+    4300084: BlankWall
   materials:
     importMaterials: 1
     materialName: 0
@@ -161,7 +246,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 100
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1

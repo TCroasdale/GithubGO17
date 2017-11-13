@@ -44,6 +44,8 @@ public class shakeable : MonoBehaviour, iSuckable {
 		power = p;
 	}
 
+    public Color changeColor() { return Color.white; }
+
 	void shake(){
 		originalPos = objToShake.localPosition;
 		isShaking = true;

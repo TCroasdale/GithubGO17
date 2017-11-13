@@ -8,4 +8,6 @@ public interface iSuckable {
 	void onBlow(Vector3 blowOrigin, float power);
 
     void onFinishedInteraction();
+
+    Color changeColor();
 }

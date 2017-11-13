@@ -1757,12 +1757,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   p_Control: {fileID: 114792150104504940}
-  p_Ui: {fileID: 0}
+  p_Ui: {fileID: 114554707761754740}
   score: 0
-  numKeys: 0
   interactDist: 3
-  maxHP: 0
+  maxHP: 3
   hitPoints: 3
+  invulnTimer:
+    time: 1.25
 --- !u!114 &114792150104504940
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -67,4 +67,5 @@ public class Breakable : MonoBehaviour, iSuckable {
 		Health = maxH;
 		isBroke = false;
 	}
+    public Color changeColor() { return Color.white; }
 }

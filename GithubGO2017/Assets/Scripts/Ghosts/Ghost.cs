@@ -6,12 +6,12 @@ public class Ghost : MonoBehaviour, iSuckable {
 
     public Ai ai;
 
+    float maxHealth;
     public float Health = 100;
     public float dps = 6.0f;
 
 
-    public float scaredTimer = 10.0f;
-    float timer;
+    public Timer scaredTimer;
 
     public Transform target;
 
@@ -24,8 +24,13 @@ public class Ghost : MonoBehaviour, iSuckable {
     public float rotSpeed = 2.0f;
     bool canMove = true;
 
+    public Color suckerColor;
 
     Animator anim;
+
+    public GhostUi ui;
+    public int numHearts = 3;
+    int currHearts = 3;
 
 	// Use this for initialization
 	void Start () {
@@ -34,13 +39,17 @@ public class Ghost : MonoBehaviour, iSuckable {
         GetComponent<Ai>().setTarget(target);
         c_Control = GetComponent<CharacterController>();
         anim = GetComponent<Animator>();
+
+        currHearts = numHearts;
+        maxHealth = Health;
+        ui.setHeartsVisible(numHearts);
+        ui.setFullHeartCount(currHearts);
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if(ai.GetState() == Ai.EnemyState.SCARED){
-            timer -= Time.deltaTime;
-            if(timer <= 0){
+            if(scaredTimer.getDone()){
                 resetScared();
             }
         }
@@ -53,12 +62,14 @@ public class Ghost : MonoBehaviour, iSuckable {
         if(canMove) c_Control.Move(dir * moveSpeed * Time.deltaTime);
         canMove = true;
 
+
+        scaredTimer.doUpdate(Time.deltaTime);
 	}
 
     public void setScared(){
         ai.setState(Ai.EnemyState.SCARED);
 
-        timer = scaredTimer;
+        scaredTimer.start();
         mesh.GetComponent<Renderer>().material = specialMaterial;
         anim.SetBool("scared", true);
     }
@@ -75,8 +86,19 @@ public class Ghost : MonoBehaviour, iSuckable {
         if(ai.GetState() == Ai.EnemyState.SCARED){
             Health -= dps * Time.deltaTime;
             canMove = false;
+            if(Health < ((currHearts-1) / (float)numHearts) * maxHealth){
+                currHearts --;
+                ui.setFullHeartCount(currHearts);
+            }
+
+            if(Health <= 0){
+                Destroy(gameObject);
+                ui.showHearts(false);
+            }
         }
     }
+
+    public Color changeColor() { return suckerColor; }
 
     public void onSuck(Vector3 o, float p){
         doDamage(3);

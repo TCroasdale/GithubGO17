@@ -106,7 +106,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1750918547181624
 GameObject:
   m_ObjectHideFlags: 1
@@ -164,6 +164,7 @@ GameObject:
   - component: {fileID: 143954931760066502}
   - component: {fileID: 114566885531172974}
   - component: {fileID: 114785552262918532}
+  - component: {fileID: 114071193658776470}
   m_Layer: 0
   m_Name: Ghost
   m_TagString: Ghost
@@ -294,8 +295,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1857041056436820}
-  m_LocalRotation: {x: -0, y: 0.99097127, z: -0, w: 0.13407493}
-  m_LocalPosition: {x: 2.82, y: 1.6, z: 11.86}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: -0.24, y: 1.6, z: -4.83}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4194599782363898}
@@ -303,7 +304,7 @@ Transform:
   - {fileID: 4586672822125400}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 164.59001, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!4 &4570017558641238
 Transform:
   m_ObjectHideFlags: 1
@@ -479,6 +480,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bone: {fileID: 4312544108594422}
+--- !u!114 &114071193658776470
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1857041056436820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2974a5817d67a924aaaf72a5394fbfcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heartsUi:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  fullHeart: {fileID: 2800000, guid: 34bc9b7f08462894b9afbb66207a2691, type: 3}
+  emptyHeart: {fileID: 2800000, guid: fb7cfd62a570dfb408250fc443e748ea, type: 3}
 --- !u!114 &114566885531172974
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -506,13 +530,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ai: {fileID: 114566885531172974}
   Health: 100
-  dps: 6
-  scaredTimer: 10
+  dps: 4
+  scaredTimer:
+    time: 10
   target: {fileID: 0}
   mesh: {fileID: 4764833692918886}
   normalMaterial: {fileID: 0}
   specialMaterial: {fileID: 2100000, guid: 13ce93ca32c78644e83c8e6cdd2466c9, type: 2}
   moveSpeed: 1.75
+  rotSpeed: 2
+  suckerColor: {r: 0, g: 0, b: 0, a: 0}
+  ui: {fileID: 114071193658776470}
+  numHearts: 3
 --- !u!135 &135653933021208630
 SphereCollider:
   m_ObjectHideFlags: 1

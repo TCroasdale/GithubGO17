@@ -23,4 +23,6 @@ public class DotScript : MonoBehaviour, iSuckable {
 	}
 
     public void onFinishedInteraction(){}
+    public Color changeColor() { return Color.white; }
+
 }

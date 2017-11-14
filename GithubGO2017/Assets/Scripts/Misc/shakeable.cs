@@ -26,9 +26,9 @@ public class shakeable : MonoBehaviour, iSuckable {
 			//shaking code
 			Vector3 grandShakeAmount = shakeAmt;
 			if(powerMod != 0){
-				if(grandShakeAmount.x != 0){ grandShakeAmount.x += (power * powerMod); }
-				if(grandShakeAmount.y != 0){ grandShakeAmount.y += (power * powerMod); }
-				if(grandShakeAmount.z != 0){ grandShakeAmount.z += (power * powerMod); }
+				if(grandShakeAmount.x != 0){ grandShakeAmount.x += (power / powerMod); }
+				if(grandShakeAmount.y != 0){ grandShakeAmount.y += (power / powerMod); }
+				if(grandShakeAmount.z != 0){ grandShakeAmount.z += (power / powerMod); }
 			}
 			objToShake.localPosition = Mathf.Sin(Time.time * shakeSpeed) * grandShakeAmount;
 		}

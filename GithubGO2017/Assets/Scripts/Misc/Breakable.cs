@@ -19,6 +19,8 @@ public class Breakable : MonoBehaviour, iSuckable {
 	public GameObject hiddenObject;
 	public Transform hidObjPos;
 
+    public GameObject particleFX;
+
 	// Use this for initialization
 	void Start () {
 		maxH = Health;
@@ -53,6 +55,7 @@ public class Breakable : MonoBehaviour, iSuckable {
 
 			if(!isBroke){
 				if(hiddenObject != null) Instantiate(hiddenObject, hidObjPos.position, Quaternion.identity);
+                if(particleFX != null) Instantiate(particleFX, transform.position, Quaternion.identity);
 			}
 			isBroke = true;
 		}

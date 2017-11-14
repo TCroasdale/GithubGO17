@@ -48,6 +48,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1663062123481622
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4074688992975942}
+  m_Layer: 0
+  m_Name: hidobjpos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1733056388662556
 GameObject:
   m_ObjectHideFlags: 0
@@ -65,6 +80,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &4074688992975942
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1663062123481622}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4800315478520818}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4088969932361180
 Transform:
   m_ObjectHideFlags: 1
@@ -97,12 +125,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1302324618030404}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.48, y: 1.99, z: -0.27}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071067}
+  m_LocalPosition: {x: -2.31, y: 19.736193, z: 0.5001545}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4088969932361180}
   - {fileID: 4251728524272888}
+  - {fileID: 4074688992975942}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -195,7 +224,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 10
   m_CollisionDetection: 0
 --- !u!65 &65507277051012616
 BoxCollider:
@@ -238,6 +267,9 @@ MonoBehaviour:
   cleanCollider: {fileID: 65507277051012616}
   brokenCollider: {fileID: 65663991443564968}
   shaker: {fileID: 114754169477232198}
+  hiddenObject: {fileID: 1248525823202698, guid: 9701d8526beebd647b1956f43c60f82e,
+    type: 2}
+  hidObjPos: {fileID: 4074688992975942}
 --- !u!114 &114754169477232198
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -250,7 +282,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isShaking: 0
-  shakeTime: 0.1
-  shakeAmt: {x: 0.02, y: 0, z: 0}
+  shakeTime: 0.3
+  shakeAmt: {x: 0.01, y: 0, z: 0}
   shakeSpeed: 25
   objToShake: {fileID: 4088969932361180}
+  powerMod: 1000

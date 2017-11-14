@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ghost : MonoBehaviour, iSuckable {
+public class Ghost : MonoBehaviour, iSuckable, iTriggerable {
 
     public Ai ai;
 
@@ -32,19 +32,30 @@ public class Ghost : MonoBehaviour, iSuckable {
     public int numHearts = 3;
     int currHearts = 3;
 
+    public void fireEvent(){
+        this.enabled = true;
+        showUI();
+    }
+
 	// Use this for initialization
 	void Start () {
+        this.enabled = false;
+
+
 		transform.tag = "Ghost";
         normalMaterial = mesh.GetComponent<Renderer>().material;
         GetComponent<Ai>().setTarget(target);
         c_Control = GetComponent<CharacterController>();
         anim = GetComponent<Animator>();
+        ui.setHeartsVisible(0);
+	}
 
+    void showUI(){
         currHearts = numHearts;
         maxHealth = Health;
         ui.setHeartsVisible(numHearts);
         ui.setFullHeartCount(currHearts);
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
